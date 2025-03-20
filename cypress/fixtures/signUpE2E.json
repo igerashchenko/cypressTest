@@ -1,0 +1,14 @@
+{
+    "validUser": {
+      "firstName": "Ira",
+      "lastName": "Herashchenko",
+      "email": "test{random6numbers}@test.com",
+      "password": "jkkwdJJI290303"
+    },
+    "invalidUser": {
+      "firstName": "Олег",
+      "lastName": "Ч",
+      "email": "test",
+      "password": "444444"
+    }
+  }
