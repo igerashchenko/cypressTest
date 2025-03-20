@@ -26,6 +26,8 @@ describe('Validate the new user registration', () => {
             SignUpPage.reEnterPassword(user.password);
             SignUpPage.clickRegister();
             ProfilePage.getProfileButton().should('exist');
+            ProfilePage.logout();
+            cy.login(email,user.password);
         })
     });
 
