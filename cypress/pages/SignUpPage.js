@@ -65,11 +65,11 @@ class SignUpPage {
     }
 
     enterPassword(password){
-        this.getPassword().type(password);
+        this.getPassword().type(password, { sensitive: true });
     }
 
     reEnterPassword(password){
-        this.getReEnterPassword().type(password);
+        this.getReEnterPassword().type(password, { sensitive: true });
     }
 
     clickRegister(){
