@@ -4,12 +4,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "npx cypress open"
+    "cypress:open": "npx cypress open",
+    "test:qauto1": "npx cypress run --config-file=config.qauto1.js --spec 'cypress/e2e/carAndExpenses.cy.js' --reporter mochawesome",
+    "test:qauto2": "npx cypress run --config-file=config.qauto2.js --spec 'cypress/e2e/carAndExpenses.cy.js' --reporter mochawesome"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "cypress": "^14.1.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }

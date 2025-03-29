@@ -1,0 +1,14 @@
+{
+    "carData": {
+        "brand": "Porsche",
+        "model": "Panamera",
+        "mileage": "1000"
+    },
+    "expenseData": {
+        "car": "Porsche Panamera",
+        "date": "27.03.2025",
+        "mileage": "1100",
+        "liters": "50",
+        "totalCost": "100"
+    }
+}
