@@ -1,7 +1,6 @@
 import GaragePage from '../pages/GaragePage';
 import ExpensesPage from '../pages/ExpensesPage';
 import LoginPage from '../pages/LoginPage';
-import { after } from 'mocha';
 
 describe('Car and Expenses Tests', () => {
     beforeEach(function() {
@@ -22,7 +21,7 @@ describe('Car and Expenses Tests', () => {
     });
 
     it('Add a car to garage', function() {
-        GaragePage.addCar(this.data.carData);
+        GaragePage.addCarViaUI(this.data.carData);
         GaragePage.getGarageItem().should('exist');
 
     });
@@ -33,6 +32,6 @@ describe('Car and Expenses Tests', () => {
     });
 
     after(() => {
-        GaragePage.removeCar();
+        GaragePage.deleteAllCarsviaApi();
     })
 });

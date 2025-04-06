@@ -21,3 +21,38 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
 
   return originalFn(element, text, options)
 })
+
+Cypress.Commands.add('createExpense', (expenseData) => {
+  cy.log('API Request:', JSON.stringify(expenseData, null, 2)); // Log request payload
+  const email = Cypress.config('users').email;
+  const password = Cypress.config('users').password;
+ 
+cy.signIn(email, password, false);
+
+  return cy.request({
+    method: 'POST',
+    url: '/api/expenses',
+    auth: {
+      username: "guest",
+      password: "welcome2qauto"
+    },
+    body: expenseData,
+    failOnStatusCode: false,
+    log: true 
+  });
+});
+
+Cypress.Commands.add('signIn', (email, password, remember) => {
+  return cy.request({
+    method: 'POST',
+    url: '/api/auth/signin', 
+    body: {
+      email,
+      password,
+      remember
+    },
+    failOnStatusCode: false 
+  }).then((response) => {
+    return response;
+  });
+});
